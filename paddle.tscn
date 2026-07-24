@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d4j7xe1qi3tfu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tbfo"]
+size = Vector2(10, 40)
+
+[node name="Paddle" type="AnimatableBody2D" unique_id=1821720702]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2085755618]
+position = Vector2(5, 20)
+shape = SubResource("RectangleShape2D_2tbfo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1773431407]
+offset_right = 10.0
+offset_bottom = 40.0
