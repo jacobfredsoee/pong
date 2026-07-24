@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cdcrmk2cdfep4"]
-
-[ext_resource type="PackedScene" uid="uid://d4j7xe1qi3tfu" path="res://paddle.tscn" id="1_3fdib"]
-[ext_resource type="Script" uid="uid://cno425vc52xhd" path="res://PlayerPaddle.cs" id="2_k6kng"]
-
-[node name="Paddle" unique_id=1821720702 instance=ExtResource("1_3fdib")]
-script = ExtResource("2_k6kng")
-Color = Color(0.32941177, 0.7607843, 0, 0.99215686)

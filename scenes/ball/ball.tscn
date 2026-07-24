@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://de78u6sepvyir"]
 
-[ext_resource type="Script" uid="uid://k5gp6gkyj6uj" path="res://Ball.cs" id="1_41u45"]
-[ext_resource type="Script" uid="uid://bcmxnrvnius3b" path="res://BallColor.cs" id="1_x8fbi"]
+[ext_resource type="Script" uid="uid://k5gp6gkyj6uj" path="res://scenes/ball/Ball.cs" id="1_41u45"]
+[ext_resource type="Script" uid="uid://bcmxnrvnius3b" path="res://scenes/ball/BallColor.cs" id="1_x8fbi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1bvp3"]
 friction = 0.0

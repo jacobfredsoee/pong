@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b821myv7hqira"]
 
-[ext_resource type="Script" uid="uid://blyu5gt8cxah0" path="res://Main.cs" id="1_272bh"]
-[ext_resource type="PackedScene" uid="uid://cxhetkb21f0pq" path="res://barrier.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://cdcrmk2cdfep4" path="res://player_paddle.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cw71rigirhfy7" path="res://middle_line.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://de78u6sepvyir" path="res://ball.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://s5xackb5fax" path="res://ai_paddle.tscn" id="5_lquwl"]
-[ext_resource type="PackedScene" uid="uid://vg3ge7au6lli" path="res://score_region.tscn" id="6_7mycd"]
-[ext_resource type="PackedScene" uid="uid://xhrbej3ty1jw" path="res://hud.tscn" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://blyu5gt8cxah0" path="res://scenes/main/Main.cs" id="1_272bh"]
+[ext_resource type="PackedScene" uid="uid://cxhetkb21f0pq" path="res://scenes/arena/barrier.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cdcrmk2cdfep4" path="res://scenes/paddle/player_paddle.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cw71rigirhfy7" path="res://scenes/arena/middle_line.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://de78u6sepvyir" path="res://scenes/ball/ball.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://s5xackb5fax" path="res://scenes/paddle/ai_paddle.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://vg3ge7au6lli" path="res://scenes/arena/score_region.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://xhrbej3ty1jw" path="res://ui/hud.tscn" id="8_5vw27"]
 
 [node name="Main" type="Node" unique_id=438595330]
 script = ExtResource("1_272bh")
@@ -44,4 +44,3 @@ position = Vector2(630, 180)
 
 [connection signal="body_entered" from="PlayerScoreRegion" to="." method="OnLeftGoalEntered"]
 [connection signal="body_entered" from="AiScoreRegion" to="." method="OnRightGoalEntered"]
-[connection signal="RestartRequested" from="HUD" to="." method="Restart"]
