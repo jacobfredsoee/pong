@@ -15,15 +15,14 @@ gravity_scale = 0.0
 linear_damp_mode = 1
 angular_damp_mode = 1
 script = ExtResource("1_41u45")
-speed = 300.0
+Speed = 300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=259446109]
 shape = SubResource("CircleShape2D_x8fbi")
 
 [node name="BallColor" type="Node2D" parent="." unique_id=1188464897]
 script = ExtResource("1_x8fbi")
-color = Color(0.8327755, 0, 0.1231005, 1)
-radius = 10.0
+Color = Color(0.8327755, 0, 0.1231005, 1)
 
 [node name="ServeTimer" type="Timer" parent="." unique_id=580666417]
 wait_time = 2.0

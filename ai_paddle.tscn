@@ -5,4 +5,4 @@
 
 [node name="AiPaddle" unique_id=1821720702 instance=ExtResource("1_df2fg")]
 script = ExtResource("2_h7okn")
-color = Color(0.78132653, 0.12247256, 0.0825559, 1)
+Color = Color(0.78132653, 0.12247256, 0.0825559, 1)

@@ -9,9 +9,11 @@ public enum PlayerType
 public partial class HUD : CanvasLayer
 {
 	[Signal]
-	public delegate void OnRestartEventHandler();
-	public int PlayerScore { get; set; }
-	public int AiScore { get; set; }
+	public delegate void RestartRequestedEventHandler();
+	private int _playerScore;
+	public int PlayerScore { get => _playerScore; }
+	private int _aiScore;
+	public int AiScore { get => _aiScore; }
 
 	public override void _Ready()
 	{
@@ -20,8 +22,8 @@ public partial class HUD : CanvasLayer
 
 	public void Reset()
 	{
-		PlayerScore = 0;
-		AiScore = 0;
+		_playerScore = 0;
+		_aiScore = 0;
 		UpdateScore();
 		GetNode<Label>("PlayerWinnerLabel").Hide();
 		GetNode<Label>("AiWinnerLabel").Hide();
@@ -32,11 +34,11 @@ public partial class HUD : CanvasLayer
 	{
 		if (playerType == PlayerType.Player)
 		{
-			PlayerScore++;
+			_playerScore++;
 		}
 		else
 		{
-			AiScore++;
+			_aiScore++;
 		}
 		UpdateScore();
 	}
@@ -56,11 +58,11 @@ public partial class HUD : CanvasLayer
 
 	private void UpdateScore()
 	{
-		GetNode<Label>("PlayerScoreLabel").Text = PlayerScore.ToString();
-		GetNode<Label>("AiScoreLabel").Text = AiScore.ToString();
+		GetNode<Label>("PlayerScoreLabel").Text = _playerScore.ToString();
+		GetNode<Label>("AiScoreLabel").Text = _aiScore.ToString();
 	}
-	public void OnRestartButtonPressed()
+	public void RestartRequestedButtonPressed()
 	{
-		EmitSignal(SignalName.OnRestart);
+		EmitSignal(SignalName.RestartRequested);
 	}
 }

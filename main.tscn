@@ -13,7 +13,7 @@
 script = ExtResource("1_272bh")
 
 [node name="MiddleLine" parent="." unique_id=313371525 instance=ExtResource("2_h2yge")]
-position = Vector2(340, 10)
+position = Vector2(320, 10)
 
 [node name="BarrierTop" parent="." unique_id=811868802 instance=ExtResource("1_ig7tw")]
 position = Vector2(20, 10)
@@ -22,17 +22,17 @@ position = Vector2(20, 10)
 position = Vector2(20, 350)
 
 [node name="Ball" parent="." unique_id=1073782191 instance=ExtResource("4_1bvp3")]
-position = Vector2(340, 180)
+Radius = 10.0
 
 [node name="PlayerPaddle" parent="." unique_id=1821720702 instance=ExtResource("2_0xm2m")]
 position = Vector2(30, 160)
-color = Color(0, 0.53333336, 0.9490196, 0.99215686)
+Color = Color(0, 0.53333336, 0.9490196, 0.99215686)
 
-[node name="AiPaddle" parent="." unique_id=859554997 node_paths=PackedStringArray("ball") instance=ExtResource("5_lquwl")]
+[node name="AiPaddle" parent="." unique_id=859554997 node_paths=PackedStringArray("Ball") instance=ExtResource("5_lquwl")]
 position = Vector2(600, 160)
-ball = NodePath("../Ball")
-speed = 200.0
-color = Color(0, 0.53333336, 0.9490196, 0.99215686)
+Ball = NodePath("../Ball")
+Speed = 200.0
+Color = Color(0, 0.53333336, 0.9490196, 0.99215686)
 
 [node name="PlayerScoreRegion" parent="." unique_id=683408645 instance=ExtResource("6_7mycd")]
 position = Vector2(10, 180)
@@ -44,4 +44,4 @@ position = Vector2(630, 180)
 
 [connection signal="body_entered" from="PlayerScoreRegion" to="." method="OnLeftGoalEntered"]
 [connection signal="body_entered" from="AiScoreRegion" to="." method="OnRightGoalEntered"]
-[connection signal="OnRestart" from="HUD" to="." method="Restart"]
+[connection signal="RestartRequested" from="HUD" to="." method="Restart"]

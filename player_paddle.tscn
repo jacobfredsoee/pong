@@ -5,4 +5,4 @@
 
 [node name="Paddle" unique_id=1821720702 instance=ExtResource("1_3fdib")]
 script = ExtResource("2_k6kng")
-color = Color(0.32941177, 0.7607843, 0, 0.99215686)
+Color = Color(0.32941177, 0.7607843, 0, 0.99215686)

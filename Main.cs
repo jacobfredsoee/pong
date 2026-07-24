@@ -1,33 +1,30 @@
 using Godot;
-using System;
 
 public partial class Main : Node
 {
-	private Ball ball;
-	// Called when the node enters the scene tree for the first time.
+	[Export]
+	public int ScoreToWin = 3;
+	private Ball _ball;
+	private HUD _hud;
 	public override void _Ready()
 	{
-		ball = GetNode<Ball>("Ball");
-		ball.Serve();
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		_ball = GetNode<Ball>("Ball");
+		_hud = GetNode<HUD>("HUD");
+		_ball.Serve();
 	}
 
 	private bool CheckForVictory()
 	{
-		if (GetNode<HUD>("HUD").PlayerScore >= 3)
+		if (_hud.PlayerScore >= ScoreToWin)
 		{
-			ball.Stop();
-			GetNode<HUD>("HUD").ShowWinner(PlayerType.Player);
+			_ball.Stop();
+			_hud.ShowWinner(PlayerType.Player);
 			return true;
 		}
-		else if (GetNode<HUD>("HUD").AiScore >= 3)
+		else if (_hud.AiScore >= ScoreToWin)
 		{
-			ball.Stop();
-			GetNode<HUD>("HUD").ShowWinner(PlayerType.Ai);
+			_ball.Stop();
+			_hud.ShowWinner(PlayerType.Ai);
 			return true;
 		}
 		return false;
@@ -36,23 +33,23 @@ public partial class Main : Node
 	public void OnLeftGoalEntered(Node2D body)
 	{
 		if (body is not Ball) return;
-		GetNode<HUD>("HUD").PlayerScored(PlayerType.Ai);
+		_hud.PlayerScored(PlayerType.Ai);
 
 		if (CheckForVictory()) return;
-		ball.Serve();
+		_ball.Serve();
 	}
 
 	public void OnRightGoalEntered(Node2D body)
 	{
 		if (body is not Ball) return;
-		GetNode<HUD>("HUD").PlayerScored(PlayerType.Player);
+		_hud.PlayerScored(PlayerType.Player);
 
 		if (CheckForVictory()) return;
-		ball.Serve();
+		_ball.Serve();
 	}
 	public void Restart()
 	{
-		GetNode<HUD>("HUD").Reset();
-		ball.Serve();
+		_hud.Reset();
+		_ball.Serve();
 	}
 }
