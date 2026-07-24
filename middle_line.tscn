@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cw71rigirhfy7"]
+
+[node name="MiddleLine" type="Line2D" unique_id=313371525]
+points = PackedVector2Array(0, 0, 0, 335)
+width = 2.0

@@ -4,6 +4,7 @@
 size = Vector2(10, 40)
 
 [node name="Paddle" type="AnimatableBody2D" unique_id=1821720702]
+sync_to_physics = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2085755618]
 position = Vector2(5, 20)

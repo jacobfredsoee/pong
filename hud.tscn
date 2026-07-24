@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://xhrbej3ty1jw"]
+
+[ext_resource type="Script" uid="uid://br3i43hxgca03" path="res://HUD.cs" id="1_37p78"]
+
+[node name="HUD" type="CanvasLayer" unique_id=790654833]
+script = ExtResource("1_37p78")
+
+[node name="PlayerScoreLabel" type="Label" parent="." unique_id=1159503265]
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 90.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AiScoreLabel" type="Label" parent="." unique_id=1380418913]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 30.0
+offset_right = -50.0
+offset_bottom = 75.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerWinnerLabel" type="Label" parent="." unique_id=1573838197]
+anchors_preset = -1
+anchor_left = 0.17300001
+anchor_top = 0.476
+anchor_right = 0.17300001
+anchor_bottom = 0.476
+offset_left = -30.720001
+offset_top = -11.360001
+offset_right = 30.279999
+offset_bottom = 11.639999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Winner!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AiWinnerLabel" type="Label" parent="." unique_id=1322504514]
+anchors_preset = -1
+anchor_left = 0.82900006
+anchor_top = 0.476
+anchor_right = 0.82900006
+anchor_bottom = 0.476
+offset_left = -30.560059
+offset_top = -11.360001
+offset_right = 30.439941
+offset_bottom = 11.639999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Winner!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="." unique_id=1963616019]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -21.0
+offset_right = 80.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Play Again"
+
+[connection signal="pressed" from="RestartButton" to="." method="OnRestartButtonPressed"]

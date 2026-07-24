@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b821myv7hqira"]
+
+[ext_resource type="Script" uid="uid://blyu5gt8cxah0" path="res://Main.cs" id="1_272bh"]
+[ext_resource type="PackedScene" uid="uid://cxhetkb21f0pq" path="res://barrier.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cdcrmk2cdfep4" path="res://player_paddle.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cw71rigirhfy7" path="res://middle_line.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://de78u6sepvyir" path="res://ball.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://s5xackb5fax" path="res://ai_paddle.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://vg3ge7au6lli" path="res://score_region.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://xhrbej3ty1jw" path="res://hud.tscn" id="8_5vw27"]
+
+[node name="Main" type="Node" unique_id=438595330]
+script = ExtResource("1_272bh")
+
+[node name="MiddleLine" parent="." unique_id=313371525 instance=ExtResource("2_h2yge")]
+position = Vector2(340, 10)
+
+[node name="BarrierTop" parent="." unique_id=811868802 instance=ExtResource("1_ig7tw")]
+position = Vector2(20, 10)
+
+[node name="BarrierBottom" parent="." unique_id=456989783 instance=ExtResource("1_ig7tw")]
+position = Vector2(20, 350)
+
+[node name="Ball" parent="." unique_id=1073782191 instance=ExtResource("4_1bvp3")]
+position = Vector2(340, 180)
+
+[node name="PlayerPaddle" parent="." unique_id=1821720702 instance=ExtResource("2_0xm2m")]
+position = Vector2(30, 160)
+color = Color(0, 0.53333336, 0.9490196, 0.99215686)
+
+[node name="AiPaddle" parent="." unique_id=859554997 node_paths=PackedStringArray("ball") instance=ExtResource("5_lquwl")]
+position = Vector2(600, 160)
+ball = NodePath("../Ball")
+speed = 200.0
+color = Color(0, 0.53333336, 0.9490196, 0.99215686)
+
+[node name="PlayerScoreRegion" parent="." unique_id=683408645 instance=ExtResource("6_7mycd")]
+position = Vector2(10, 180)
+
+[node name="AiScoreRegion" parent="." unique_id=686641212 instance=ExtResource("6_7mycd")]
+position = Vector2(630, 180)
+
+[node name="HUD" parent="." unique_id=790654833 instance=ExtResource("8_5vw27")]
+
+[connection signal="body_entered" from="PlayerScoreRegion" to="." method="OnLeftGoalEntered"]
+[connection signal="body_entered" from="AiScoreRegion" to="." method="OnRightGoalEntered"]
+[connection signal="OnRestart" from="HUD" to="." method="Restart"]

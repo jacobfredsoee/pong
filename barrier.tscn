@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cxhetkb21f0pq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tbfo"]
+size = Vector2(600, 5)
+
+[node name="Barrier" type="StaticBody2D" unique_id=811868802]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=603149615]
+position = Vector2(300, 0)
+shape = SubResource("RectangleShape2D_2tbfo")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1975700675]
+points = PackedVector2Array(600, 0, 0, 0)
+width = 5.0
